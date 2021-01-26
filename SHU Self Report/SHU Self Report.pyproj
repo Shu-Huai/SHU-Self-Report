@@ -21,7 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="fstate_generator.py" />
+    <Compile Include="login.py" />
     <Compile Include="SHU_Self_Report.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="config.yaml" />
+    <Content Include="fstate_day.json" />
+    <Content Include="fstate_halfday.json" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
