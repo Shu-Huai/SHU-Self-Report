@@ -671,7 +671,6 @@
     ]
   },
   "p1_ZhengZhuang": {
-    "Hidden": true,
     "F_Items": [
       [
         "感冒",
@@ -689,6 +688,7 @@
         1
       ]
     ],
+    "Hidden": true,
     "SelectedValueArray": []
   }
 }

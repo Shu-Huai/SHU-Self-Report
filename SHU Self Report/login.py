@@ -22,7 +22,10 @@ def login(username, password):
             code = r.url.split('/')[-1]
             url_param = eval(base64.b64decode(code).decode("utf-8"))
             state = url_param['state']
-            sess.post(r.url, data={'username': username, 'password': password})
+            sess.post(r.url, data={
+                'username': username,
+                'password': password
+            })
             messageBox = sess.get(f'https://newsso.shu.edu.cn/oauth/authorize?response_type=code&client_id=WUHWfrntnWYHZfzQ5QvXUCVy&redirect_uri=https%3a%2f%2fselfreport.shu.edu.cn%2fLoginSSO.aspx%3fReturnUrl%3d%252fDefault.aspx&scope=1&state={state}')
             if 'tz();' in messageBox.text:
                 myMessages(sess)
@@ -44,5 +47,5 @@ def login(username, password):
         print(f'{username} 登录失败')
         print(r.text)
         return
-    print(f'{username} 登录成功')
+    print(f'登录成功')
     return sess
